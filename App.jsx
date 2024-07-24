@@ -4,7 +4,7 @@ const App = () => {
   const [showImage, setShowImage] = useState(true);
   const [bgDiv, setBgDiv] = useState("red");
   const [input, setInput] = useState("");
-  const [fontSize, setFontSize] = useState(30);
+  const [fontsize, setFontSize] = useState(30);
   const [color, setColor] = useState("");
   return (
     <div style={{
@@ -81,13 +81,12 @@ const App = () => {
         </div>
         <div>
           <h2>Font Increaser</h2>
-          <p style={{ fontSize }}>{input || 'CodingOtt'}</p>
+          <p style={{fontSize:fontsize}}>{'CodingOtt'}</p>
           <input
             type="range"
             min="30"
             max="200"
             step="1"
-            value={fontSize}
             onChange={(e) => setFontSize(Number(e.target.value))}
           />
         </div>
@@ -96,7 +95,6 @@ const App = () => {
           <input
             placeholder="Enter color name"
             onChange={(e) => setColor(e.target.value)}
-            value={color}
             style={{ marginBottom: 16 }}
           />
           <div style={{
